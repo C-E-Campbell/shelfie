@@ -3,7 +3,29 @@
 	background: #d34735;
 	margin: 2px;
 	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+	border-radius: 4px;
+	width: 350px;
+	height: 150px;
+	color: #fff;
+
+	div {
+		flex-basis: 4;
+	}
 }
 img {
 	width: 150px;
+	border-radius: 4px;
+}
+
+button {
+	background-color: #3ad886;
+	border: none;
+	border-radius: 4px;
+	margin: 2px;
+	padding: 5px;
+	&:hover {
+		background-color: #38ac70;
+	}
 }

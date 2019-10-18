@@ -3,15 +3,35 @@
 	display: flex;
 	flex-direction: column;
 	width: 20%;
+	height: 200px;
 	margin: 0;
 	padding: 1rem;
+	border-radius: 4px;
+
+	input {
+		border: none;
+		border-radius: 4px;
+		padding: 6px;
+		outline: none;
+	}
 
 	button {
-		width: 20%;
+		width: 30%;
 		margin: 2px auto;
-		background-color: #ea6959;
+		background-color: #ed6b5a;
 
 		border: none;
 		color: #fff;
+
+		&:hover {
+			background-color: #cf5c4c;
+		}
 	}
+}
+
+.btnDisplay {
+	display: flex;
+	margin-top: 10px;
+	width: 95%;
+	justify-content: space-between;
 }
