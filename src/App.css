@@ -1,5 +1,14 @@
 .App {
 	text-align: center;
+	background-image: linear-gradient(
+			rgba(15, 15, 15, 0.733),
+			rgba(34, 34, 34, 0.486)
+		),
+		url("./assets/4k-wallpaper-abstract-art-1210276.jpg");
+	background-size: cover;
+	background-position: center;
+
+	height: 98vh;
 }
 
 .App-logo {
