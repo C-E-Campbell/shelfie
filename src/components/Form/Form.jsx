@@ -6,7 +6,9 @@ class Form extends React.Component {
 		this.state = {
 			url: "",
 			product_name: "",
-			price: 0
+			price: 0,
+			isEditing: this.props.current,
+			changeToSave: false
 		};
 	}
 
@@ -14,6 +16,11 @@ class Form extends React.Component {
 		this.setState({ url: "", product_name: "", price: "" });
 	};
 
+	componentDidUpdate(prevProps) {
+		if (prevProps.current !== this.props.current) {
+			this.setState({ changeToSave: true });
+		}
+	}
 	render() {
 		return (
 			<form className={style.form}>
@@ -44,19 +51,43 @@ class Form extends React.Component {
 				<button onClick={this.reset} type='reset'>
 					Cancel
 				</button>
-				<button
-					onClick={e => {
-						e.preventDefault();
-						this.props.create(
-							this.state.product_name,
-							this.state.price,
-							this.state.url
-						);
-					}}
-					type='submit'
-				>
-					Add to Inventory
-				</button>
+				{this.state.changeToSave ? (
+					<button
+						onClick={e => {
+							e.preventDefault();
+							this.props.update(
+								this.props.current,
+								this.state.product_name,
+								this.state.price,
+								this.state.url
+							);
+							this.setState({
+								url: "",
+								product_name: "",
+								price: 0,
+								changeToSave: false
+							});
+						}}
+						type='submit'
+					>
+						Save Changes
+					</button>
+				) : (
+					<button
+						onClick={e => {
+							e.preventDefault();
+							this.props.create(
+								this.state.product_name,
+								this.state.price,
+								this.state.url
+							);
+							this.setState({ url: "", product_name: "", price: 0 });
+						}}
+						type='submit'
+					>
+						Add to Inventory
+					</button>
+				)}
 			</form>
 		);
 	}

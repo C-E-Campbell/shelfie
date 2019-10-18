@@ -5,9 +5,12 @@ const Dashboard = props => {
 		return (
 			<Product
 				key={product.product_id}
+				id={product.product_id}
 				name={product.name}
-				img={product.image}
+				img={product.img_url}
 				price={product.price}
+				delete={props.delete}
+				edit={props.edit}
 			/>
 		);
 	});
