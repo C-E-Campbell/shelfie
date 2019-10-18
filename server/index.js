@@ -7,12 +7,14 @@ app.use(express.json());
 
 massive(process.env.CONNECTION_STRING)
 	.then(dbInstance => {
-		console.log("db is on");
 		app.set("db", dbInstance);
+		console.log("database is on");
 	})
 	.catch(err => console.log(err));
 
-app.get("/api/inventory", controller.getAll);
+app.get("/api/inventory", controller.getInventory);
+
+app.post("/api/product", controller.createProduct);
 
 const port = process.env.PORT || 8293;
 app.listen(port, () => {

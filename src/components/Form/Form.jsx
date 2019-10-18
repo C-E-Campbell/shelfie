@@ -6,12 +6,12 @@ class Form extends React.Component {
 		this.state = {
 			url: "",
 			product_name: "",
-			price: null
+			price: 0
 		};
 	}
 
 	reset = () => {
-		this.setState({ url: "", product_name: "", price: null });
+		this.setState({ url: "", product_name: "", price: "" });
 	};
 
 	render() {
@@ -44,7 +44,19 @@ class Form extends React.Component {
 				<button onClick={this.reset} type='reset'>
 					Cancel
 				</button>
-				<button type='submit'>Add to Inventory</button>
+				<button
+					onClick={e => {
+						e.preventDefault();
+						this.props.create(
+							this.state.product_name,
+							this.state.price,
+							this.state.url
+						);
+					}}
+					type='submit'
+				>
+					Add to Inventory
+				</button>
 			</form>
 		);
 	}

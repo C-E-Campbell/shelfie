@@ -1,5 +1,5 @@
 module.exports = {
-	getAll: (req, res, next) => {
+	getInventory: (req, res) => {
 		const dbInstance = req.app.get("db");
 
 		dbInstance
@@ -12,5 +12,14 @@ module.exports = {
 				});
 				console.log(err);
 			});
+	},
+
+	createProduct: (req, res) => {
+		const dbInstance = req.app.get("db");
+		const { name, price, img } = req.body;
+
+		dbInstance.create_product([name, price, img]).then(products => {
+			res.status(200).send(products);
+		});
 	}
 };
