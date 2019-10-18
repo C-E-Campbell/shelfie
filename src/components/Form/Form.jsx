@@ -24,6 +24,10 @@ class Form extends React.Component {
 	render() {
 		return (
 			<form className={style.form}>
+				<img
+					src='https://english.metro.taipei/images/default.png'
+					alt='deefault'
+				/>
 				<label htmlFor='url'>Image URL:</label>
 				<input
 					value={this.state.url}
