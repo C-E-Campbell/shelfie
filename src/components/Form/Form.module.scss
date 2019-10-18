@@ -1,0 +1,17 @@
+.form {
+	background-color: #50d690;
+	display: flex;
+	flex-direction: column;
+	width: 20%;
+	margin: 0;
+	padding: 1rem;
+
+	button {
+		width: 20%;
+		margin: 2px auto;
+		background-color: #ea6959;
+
+		border: none;
+		color: #fff;
+	}
+}
