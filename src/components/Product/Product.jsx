@@ -7,8 +7,10 @@ const Product = props => {
 			<div>
 				<h3>{props.name}</h3>
 				<h3>{props.price}</h3>
-				<button onClick={() => props.delete(props.id)}>Delete</button>
-				<button onClick={() => props.edit(props.id)}>Edit</button>
+				<div className={style.btnbox}>
+					<button onClick={() => props.delete(props.id)}>Delete</button>
+					<button onClick={() => props.edit(props.id)}>Edit</button>
+				</div>
 			</div>
 		</div>
 	);

@@ -3,20 +3,19 @@
 	background: #d34735;
 	margin: 2px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
+	align-items: center;
 	padding: 1rem;
 	border-radius: 4px;
 	width: 350px;
 	height: 150px;
 	color: #fff;
-
-	div {
-		flex-basis: 4;
-	}
+	box-shadow: 3px 3px 15px rgb(179, 175, 175);
 }
 img {
 	width: 150px;
 	border-radius: 4px;
+	max-height: 150px;
 }
 
 button {
@@ -27,5 +26,6 @@ button {
 	padding: 5px;
 	&:hover {
 		background-color: #38ac70;
+		cursor: pointer;
 	}
 }

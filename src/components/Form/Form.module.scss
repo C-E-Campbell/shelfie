@@ -8,6 +8,7 @@
 	padding: 1rem;
 	border-radius: 4px;
 	height: 500px;
+	box-shadow: 3px 3px 15px rgb(185, 184, 184);
 	img {
 		margin-bottom: 2rem;
 		width: 100%;
@@ -30,6 +31,7 @@
 
 		&:hover {
 			background-color: #cf5c4c;
+			cursor: pointer;
 		}
 	}
 }
