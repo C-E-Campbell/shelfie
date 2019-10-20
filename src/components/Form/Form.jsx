@@ -7,7 +7,6 @@ class Form extends React.Component {
 			url: "",
 			product_name: "",
 			price: "",
-			isEditing: this.props.current,
 			changeToSave: false
 		};
 	}
@@ -17,7 +16,10 @@ class Form extends React.Component {
 	};
 
 	componentDidUpdate(prevProps) {
-		if (prevProps.current !== this.props.current) {
+		if (
+			prevProps.current !== this.props.current &&
+			this.props.current !== null
+		) {
 			this.setState({ changeToSave: true });
 		}
 	}
@@ -60,6 +62,7 @@ class Form extends React.Component {
 						<button
 							onClick={e => {
 								e.preventDefault();
+								this.setState({ changeToSave: false });
 								this.props.update(
 									this.props.current,
 									this.state.product_name,

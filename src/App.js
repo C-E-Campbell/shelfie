@@ -42,7 +42,9 @@ class App extends React.Component {
 	updateProduct(id, name, price, img_url) {
 		axios
 			.put(`/api/product/${id}`, { name, price, img_url })
-			.then(response => this.setState({ inventory_list: response.data }));
+			.then(response =>
+				this.setState({ inventory_list: response.data, current_product: null })
+			);
 	}
 	render() {
 		return (
